@@ -12,7 +12,11 @@ $udp_worker->onMessage = function($connection, $data)
     var_dump($temp);
     if($temp['from'] !=null)
     {
-    	echo $temp['from'];
+    	$con_buffer[$temp['from']]=$connection ;
+    }
+    if($con_buffer[$temp['to']] !=null)
+    {
+    	$con_buffer[$temp['to']]->send($temp['data']);
     }
 
     if($data=='["ping"]')
