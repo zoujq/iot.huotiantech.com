@@ -9,10 +9,11 @@ $udp_worker->onMessage = function($connection, $data)
 {
     //var_dump($data);
     $temp=json_decode($data，true);
-    if($temp['from'] !=null)
-    {
-    	echo $temp['from'];
-    }
+    var_dump($temp);
+    // if($temp['from'] !=null)
+    // {
+    // 	echo $temp['from'];
+    // }
 
     if($data=='["ping"]')
     {
