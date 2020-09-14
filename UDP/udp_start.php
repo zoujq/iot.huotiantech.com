@@ -8,12 +8,12 @@ $udp_worker = new Worker('udp://0.0.0.0:5001');
 $udp_worker->onMessage = function($connection, $data)
 {
     //var_dump($data);
-    $temp=json_decode($data);
-    if($temp->'form' !=null)
+    $temp=json_decode($data，ture);
+    if($temp['from'] !=null)
     {
-    	echo $temp->'form';
+    	echo $temp->'from';
     }
-    
+
     if($data=='["ping"]')
     {
     	$connection->send('["pong"]');
