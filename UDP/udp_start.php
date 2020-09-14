@@ -8,7 +8,7 @@ $udp_worker = new Worker('udp://0.0.0.0:5000');
 $udp_worker->onMessage = function($connection, $data)
 {
     //var_dump($data);
-    $temp=json_decode($data，true);
+    $temp=json_decode($data,true);
     var_dump($temp);
     if($temp['from'] !=null)
     {
