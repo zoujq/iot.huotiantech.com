@@ -10,6 +10,7 @@ $udp_worker->onMessage = function($connection, $data)
     //var_dump($data);
     $temp=json_decode($data,true);
     var_dump($temp);
+    var_dump($con_buffer);
     if($temp['from'] !=null)
     {
     	$con_buffer[$temp['from']]=$connection ;
